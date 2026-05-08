@@ -1,0 +1,22 @@
+<article class="product-card">
+  <a class="product-media" href="{{ product.url }}">
+    {% if product.image %}
+      <img src="{{ product.image }}" alt="{{ product.name }}">
+    {% else %}
+      <div class="product-placeholder" aria-hidden="true">
+        <span>{{ product.name | slice: 0, 2 }}</span>
+      </div>
+    {% endif %}
+  </a>
+
+  <div class="product-card-body">
+    <div class="product-card-top">
+      <h3>{{ product.name }}</h3>
+      <span class="product-price">{{ product.price }}</span>
+    </div>
+
+    <p>{{ product.description }}</p>
+
+    <a class="glass-button small" href="{{ product.url }}">View Tool</a>
+  </div>
+</article>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#05060a">
+    <title>{{ store.name }}</title>
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+  </head>
+  <body>
+    <div class="site-shell">
+      {% include 'navbar' %}
+
+      <main id="main-content" class="page-content">
+        {{ content }}
+      </main>
+
+      {% include 'footer' %}
+    </div>
+
+    <script src="{{ 'app.js' | asset_url }}" defer></script>
+  </body>
+</html>
