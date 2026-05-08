@@ -1,0 +1,28 @@
+<section class="product-detail">
+  <div class="product-detail-media">
+    {% if product.image %}
+      <img src="{{ product.image }}" alt="{{ product.name }}">
+    {% else %}
+      <div class="product-placeholder large" aria-hidden="true">
+        <span>{{ product.name | slice: 0, 2 }}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="product-detail-copy">
+    <span class="eyebrow">Python Tool</span>
+    <h1>{{ product.name }}</h1>
+    <p class="product-description">{{ product.description }}</p>
+
+    <div class="price-panel">
+      <span>Price</span>
+      <strong>{{ product.price }}</strong>
+    </div>
+
+    {% if product.buy_url %}
+      <a class="glass-button buy-button" href="{{ product.buy_url }}">Buy Now</a>
+    {% else %}
+      <a class="glass-button buy-button" href="{{ product.url }}">Buy Now</a>
+    {% endif %}
+  </div>
+</section>

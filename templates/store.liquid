@@ -1,0 +1,20 @@
+{% include 'helper' %}
+
+<section class="store-hero">
+  <span class="eyebrow">Tool Catalog</span>
+  <h1>Python tools for builders who move fast</h1>
+  <p>Explore automation products, growth utilities, and deployable Python systems from {{ store.name }}.</p>
+</section>
+
+<section class="product-grid">
+  {% if has_products %}
+    {% for product in products %}
+      {% include 'product-card' %}
+    {% endfor %}
+  {% else %}
+    <div class="empty-state">
+      <h3>No products available yet</h3>
+      <p>Your SellAuth products will appear here automatically once published.</p>
+    </div>
+  {% endif %}
+</section>

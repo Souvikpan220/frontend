@@ -1,0 +1,47 @@
+{% include 'helper' %}
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Python Automation Store</span>
+      <h1>Premium Python Tools for Automation &amp; Growth</h1>
+      <p>Ship faster with polished scripts, automation systems, scrapers, bots, and growth utilities powered by clean Python workflows.</p>
+      <div class="hero-actions">
+        <a class="glass-button" href="/store">Browse Tools</a>
+        <a class="ghost-button" href="#products">View Products</a>
+      </div>
+    </div>
+
+    <div class="hero-panel" aria-label="Python tools preview">
+      <div class="terminal-card">
+        <div class="terminal-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <pre><code>python automate.py --scale growth
+status: optimized
+tasks: deployed
+revenue_loop: active</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-header" id="products">
+  <span class="eyebrow">Featured Tools</span>
+  <h2>Automation products ready to deploy</h2>
+</section>
+
+<section class="product-grid">
+  {% if has_products %}
+    {% for product in products %}
+      {% include 'product-card' %}
+    {% endfor %}
+  {% else %}
+    <div class="empty-state">
+      <h3>No products available yet</h3>
+      <p>Add products in SellAuth to populate this premium Python tools grid dynamically.</p>
+    </div>
+  {% endif %}
+</section>
